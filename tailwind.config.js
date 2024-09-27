@@ -6,6 +6,7 @@ export default {
     extend: {
       screens: {
         xxl: "1350px",
+        largeTab: "1250px",
         lgScreen: "1055px",
         iPad: "951px",
         iPadAir: "820px",

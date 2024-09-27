@@ -3,7 +3,7 @@ import { TbArrowsSort } from "react-icons/tb";
 
 const TornamentHeader = () => {
   return (
-    <header className="flex justify-between items-center">
+    <header className="sm:flex justify-between items-center mb-3 sm:mb-0">
       <h2 className="my-4 font-[Title-Swiss] text-3xl text-white">
         Tournaments
       </h2>

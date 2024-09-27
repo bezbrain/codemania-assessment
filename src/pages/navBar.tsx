@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { RootState } from "../store";
 
 const NavBar = () => {
-  const { isOpenAside, asideWidth, tournamentWidth } = useSelector(
+  const { asideWidth, tournamentWidth } = useSelector(
     (store: RootState) => store.asideStore
   );
 
@@ -40,11 +40,7 @@ const NavBar = () => {
 
   useEffect(() => {
     const occupiedWidth = asideWidth + tournamentWidth;
-    console.log("Occupied " + occupiedWidth);
     const remainingWidth = window.innerWidth - occupiedWidth;
-
-    console.log("Total " + window.innerWidth);
-    console.log("Remaining " + remainingWidth);
 
     setIsRemaining(remainingWidth);
   }, [asideWidth, tournamentWidth, windowWidth]);
@@ -86,7 +82,7 @@ const NavBar = () => {
       className={`fixed p-4 border-b-[1px] border-slate-700 bg-[#121212]`}
       style={{
         right: isRemaining / 2,
-        width: tournamentWidth,
+        width: `${tournamentWidth + 10}px`,
       }}
       ref={navWidthRef}
     >

@@ -48,4 +48,14 @@ const GameSetupCardWrapper = styled.div`
     font-family: "Title-Swiss";
     font-size: 2rem;
   }
+  @media screen and (max-width: 820px) {
+    h2 {
+      font-size: 25px;
+    }
+  }
+  @media screen and (max-width: 540px) {
+    h2 {
+      font-size: 20px;
+    }
+  }
 `;
