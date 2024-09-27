@@ -1,11 +1,11 @@
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import { RootState } from "../store";
+// import { RootState } from "../store";
 import { NavBar, SharedAside } from "./";
 
 const SharedLayout = () => {
-  const { isOpenAside } = useSelector((store: RootState) => store.asideStore);
+  // const { isOpenAside } = useSelector((store: RootState) => store.asideStore);
 
   const handleCloseSideBar = () => {
     // dispatch(closeSideBarDropdown());

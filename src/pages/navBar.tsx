@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { FaUser } from "react-icons/fa";
 import { FaCoins, FaAngleDown } from "react-icons/fa6";
 import { RiNotification2Fill } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
 
 import { RootState } from "../store";
 
@@ -15,12 +14,8 @@ const NavBar = () => {
   );
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [isLogout, setIsLogout] = useState(false);
   const [isRemaining, setIsRemaining] = useState(0);
   const navWidthRef = useRef(null);
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   // GET WIDTH OF NAV WHEN THE SCREEN RESIZES
   //   const handleResize = () => {
@@ -30,9 +25,6 @@ const NavBar = () => {
   //   };
 
   // FUNCTION TO LOGOUT A USER
-  const handleLogout = () => {
-    // navigate("/admin");
-  };
 
   const onResize = () => {
     setWindowWidth(window.innerWidth);

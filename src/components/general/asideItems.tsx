@@ -1,11 +1,10 @@
-import { useState, useRef, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 interface AsideItemsProps {
   path: string;
   name: string;
   icon: string;
-  isOpenAside: boolean;
   id: number;
   handleAsideClick: () => void;
 }
@@ -14,30 +13,12 @@ const AsideItems = ({
   path,
   name,
   icon,
-  isOpenAside,
   id,
   handleAsideClick,
 }: AsideItemsProps) => {
   const pageRef = useRef(null);
-  const [getTopValue, setGetTopValue] = useState();
 
   const { pathname } = useLocation();
-  const navigate = useNavigate();
-
-  const heightChange = () => {
-    // console.log(window.innerHeight);
-    // setGetTopValue(window.innerHeight);
-  };
-
-  //   useEffect(() => {
-  //     const topSpace = pageRef.current.getBoundingClientRect().top;
-  //     // console.log(topSpace);
-  //     setGetTopValue(topSpace);
-
-  //     window.addEventListener("resize", heightChange);
-
-  //     return () => window.removeEventListener("resize", heightChange);
-  //   }, [getTopValue]);
 
   return (
     <button

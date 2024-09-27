@@ -4,12 +4,10 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import { sidebarItems } from "../data/sidebarItems";
-// import { smallLogoImage } from "../../../assets/logo";
 import { AsideItems, ToggleAside, TopLogo } from "../components/general";
 import { AppDispatch, RootState } from "../store";
 import { logo, smallLogo } from "../assets";
 import { getAsideWidth } from "../management/asideSlice";
-// import { TopLogo, ToggleAside, AsideDropdowns, AsideItems } from "./";
 
 const SharedAside = () => {
   const { isOpenAside, asideWidth } = useSelector(
@@ -86,7 +84,6 @@ const SharedAside = () => {
               <AsideItems
                 name={name}
                 path={path}
-                isOpenAside={isOpenAside}
                 handleAsideClick={() => handleAsideClick(path)}
                 icon={icon}
                 id={id}
