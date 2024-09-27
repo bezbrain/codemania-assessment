@@ -8,7 +8,7 @@ interface ToggleAsideProps {
 const ToggleAside = ({ handleToggleAside, isOpenAside }: ToggleAsideProps) => {
   return (
     <div
-      className="bg-[#000] m-3 w-fit rounded-full cursor-pointer iPhone:m-4"
+      className="bg-[#353535] m-3 w-fit rounded-full block cursor-pointer iPhone:m-4 sm:hidden"
       onClick={handleToggleAside}
     >
       {isOpenAside && <FaAngleRight className="p-2 text-[##000] text-3xl" />}

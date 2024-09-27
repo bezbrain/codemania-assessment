@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect, ReactNode } from "react";
 import { FaAngleRight } from "react-icons/fa6";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface AsideItemsProps {
   path: string;
   name: string;
-  icon: ReactNode;
+  icon: string;
   isOpenAside: boolean;
   handleAsideClick: () => void;
 }
@@ -21,6 +21,7 @@ const AsideItems = ({
   const [getTopValue, setGetTopValue] = useState();
 
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const heightChange = () => {
     // console.log(window.innerHeight);
@@ -38,23 +39,16 @@ const AsideItems = ({
   //   }, [getTopValue]);
 
   return (
-    <a
-      href={path}
-      className={`cursor-pointer p-[8px] my-1 hover:bg-white hover:text-[#ff3399] flex items-center gap-4 ${
-        pathname === path
-          ? "bg-white text-[#ff3399] border-t-[1px] border-b-[1px]"
-          : ""
+    <button
+      className={`cursor-pointer p-[8px] my-1 w-[200px] text-[#7E7F7F] hover:bg-[#3B3B3B] hover:text-[#fff] flex items-center gap-4 ${
+        pathname === path ? "bg-[#3B3B3B] text-[#fff]" : ""
       }`}
       onClick={handleAsideClick}
       ref={pageRef}
     >
-      <span
-        className={`${isOpenAside ? "" : "mx-auto text-xl iPhone:text-2xl"}`}
-      >
-        {icon}
-      </span>
+      <img src={icon} alt="icon" className="w-[20px]" />
       <span className={`${isOpenAside ? "" : "hidden"}`}>{name}</span>
-    </a>
+    </button>
   );
 };
 

@@ -1,12 +1,15 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { SharedLayout, TournamentsPage } from "./pages";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { NotFound, SharedLayout, TournamentsPage } from "./pages";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route index element={<TournamentsPage />} />
+          <Route path="/" element={<Navigate to="/tournaments" />} />
+          <Route path="/tournaments" element={<TournamentsPage />} />
+
+          <Route path="/*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

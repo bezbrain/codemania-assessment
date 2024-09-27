@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { RootState } from "../store";
-import { SharedAside } from "./";
+import { NavBar, SharedAside } from "./";
 
 const SharedLayout = () => {
   const { isOpenAside } = useSelector((store: RootState) => store.asideStore);
@@ -12,20 +12,23 @@ const SharedLayout = () => {
   };
 
   return (
-    <section className="">
-      <SharedAside />
+    <main className="bg-[#000]">
+      <section className="relative max-w-[1400px] mx-auto">
+        <SharedAside />
+        <NavBar />
 
-      <SharedLayoutWrapper
-        className={`ml-auto bg-[#f7f9fc] min-h-[100vh] ${
-          isOpenAside
-            ? "lg:w-[calc(100%-280px)]"
-            : "w-[calc(100%-50px)] iPhone:w-[calc(100%-70px)]"
-        }`}
-        onClick={handleCloseSideBar}
-      >
-        <Outlet />
-      </SharedLayoutWrapper>
-    </section>
+        <SharedLayoutWrapper
+          className={`ml-auto bg-[#f7f9fc] min-h-[100vh] ${
+            isOpenAside
+              ? "lg:w-[calc(100%-280px)]"
+              : "w-[calc(100%-50px)] iPhone:w-[calc(100%-70px)]"
+          }`}
+          onClick={handleCloseSideBar}
+        >
+          <Outlet />
+        </SharedLayoutWrapper>
+      </section>
+    </main>
   );
 };
 
