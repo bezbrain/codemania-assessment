@@ -3,6 +3,7 @@ import {
   contentLockerIcon,
   leaderBoardIcon,
   liveBettingIcon,
+  logoutIcon,
   tokenShoppingIcon,
   tournamentIcon,
 } from "../assets/icons";
@@ -43,5 +44,11 @@ export const sidebarItems = [
     name: "Community",
     path: "/community",
     icon: communityIcon,
+  },
+  {
+    id: 7,
+    name: "LOG - OUT",
+    path: "",
+    icon: logoutIcon,
   },
 ];

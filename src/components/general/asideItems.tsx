@@ -1,5 +1,4 @@
-import { useState, useRef, useEffect, ReactNode } from "react";
-import { FaAngleRight } from "react-icons/fa6";
+import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 interface AsideItemsProps {
@@ -7,6 +6,7 @@ interface AsideItemsProps {
   name: string;
   icon: string;
   isOpenAside: boolean;
+  id: number;
   handleAsideClick: () => void;
 }
 
@@ -15,6 +15,7 @@ const AsideItems = ({
   name,
   icon,
   isOpenAside,
+  id,
   handleAsideClick,
 }: AsideItemsProps) => {
   const pageRef = useRef(null);
@@ -40,14 +41,14 @@ const AsideItems = ({
 
   return (
     <button
-      className={`cursor-pointer p-[8px] my-1 w-[200px] text-[#7E7F7F] hover:bg-[#3B3B3B] hover:text-[#fff] flex items-center gap-4 ${
+      className={`cursor-pointer p-[8px] my-1 text-[#7E7F7F] hover:bg-[#3B3B3B] hover:text-[#fff] flex items-center gap-4 md:w-[200px] ${
         pathname === path ? "bg-[#3B3B3B] text-[#fff]" : ""
-      }`}
+      } ${id === 7 ? "bg-[#5e0a07]" : ""}`}
       onClick={handleAsideClick}
       ref={pageRef}
     >
       <img src={icon} alt="icon" className="w-[20px]" />
-      <span className={`${isOpenAside ? "" : "hidden"}`}>{name}</span>
+      <span className="hidden md:block">{name}</span>
     </button>
   );
 };

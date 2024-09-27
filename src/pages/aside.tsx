@@ -7,6 +7,7 @@ import { sidebarItems } from "../data/sidebarItems";
 // import { smallLogoImage } from "../../../assets/logo";
 import { AsideItems, ToggleAside, TopLogo } from "../components/general";
 import { AppDispatch, RootState } from "../store";
+import { logo, smallLogo } from "../assets";
 // import { TopLogo, ToggleAside, AsideDropdowns, AsideItems } from "./";
 
 const SharedAside = () => {
@@ -31,12 +32,15 @@ const SharedAside = () => {
 
   return (
     <SharedAsideWrapper
-      className={`bg-[#121212] h-screen fixed overflow-y-auto text-white p-4 transition-all z-10 ${
-        isOpenAside ? "w-[280px]" : "w-[50px] iPhone:w-[70px] overflow-x-hidden"
-      }`}
+      className={`bg-[#121212] h-screen fixed overflow-y-auto text-white p-4 transition-all z-10 md:w-[280px]`}
     >
       {/* Top Logo */}
-      <TopLogo />
+      <TopLogo
+        logo={logo}
+        smallLogo={smallLogo}
+        logoStyle="hidden md:block"
+        smallLogoStyle="block md:hidden"
+      />
 
       {/* Toggle Increase and decrease side bar */}
       <ToggleAside
@@ -44,19 +48,22 @@ const SharedAside = () => {
         isOpenAside={isOpenAside}
       />
 
-      <ul className="sm:mt-12">
+      <ul className="mt-6 space-y-4 md:space-y-0 md:mt-10 min-h-[80%] relative">
         {sidebarItems.map((each) => {
           const { id, name, path, icon } = each;
           return (
-            <div key={id} className="relative">
+            <div
+              key={id}
+              className={`${id === 7 ? "absolute bottom-0" : "relative"}`}
+            >
               {/* Main aside items */}
               <AsideItems
                 name={name}
                 path={path}
-                // icon={icon}
                 isOpenAside={isOpenAside}
                 handleAsideClick={() => handleAsideClick(path)}
                 icon={icon}
+                id={id}
               />
             </div>
           );
@@ -76,24 +83,18 @@ const SharedAsideWrapper = styled.aside`
   }
 
   ::-webkit-scrollbar-track {
-    background: #ff3399; /* Adjust this color to match your aside background */
+    background: #121212; /* Adjust this color to match your aside background */
   }
 
   ::-webkit-scrollbar-thumb {
     background-color: #ffffff; /* Adjust this color for the scrollbar thumb */
     border-radius: 10px;
-    border: 2px solid #ff3399; /* Optional: adds a border around the thumb */
+    border: 2px solid #121212; /* Optional: adds a border around the thumb */
   }
 
   /* Custom scrollbar for Firefox */
   scrollbar-width: thin;
-  scrollbar-color: #ffffff #ff3399; /* thumb color and track color */
-
-  /* Hide scrollbar but still enable scrolling */
-  .custom-scrollbar {
-    /*-ms-overflow-style: none; /* IE and Edge */
-    /*scrollbar-width: none; /* Firefox */
-  }
+  scrollbar-color: #ffffff #121212; /* thumb color and track color */
 
   .custom-scrollbar::-webkit-scrollbar {
     /*display: none; /* Safari and Chrome */
