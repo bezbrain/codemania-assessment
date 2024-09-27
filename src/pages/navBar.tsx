@@ -55,7 +55,7 @@ const NavBar = () => {
 
   return (
     <NavBarWrapper
-      className={`absolute right-0 ml-auto p-4 w-[calc(100%-50px)] bg-[#121212] md:w-[calc(100%-280px)]`}
+      className={`absolute right-0 ml-auto p-4 border-b-[1px] border-slate-700 w-[calc(100%-50px)] bg-[#121212] md:w-[calc(100%-280px)]`}
       ref={navWidthRef}
     >
       <ul className={`flex justify-between items-center`}>

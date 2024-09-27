@@ -1,5 +1,7 @@
+import { TournamentComp } from "../components/routes/tournamentsComp";
+
 const TournamentsPage = () => {
-  return <div>TournamentsPage</div>;
+  return <TournamentComp />;
 };
 
 export default TournamentsPage;

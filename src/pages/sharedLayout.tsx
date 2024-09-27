@@ -18,7 +18,7 @@ const SharedLayout = () => {
         <NavBar />
 
         <SharedLayoutWrapper
-          className={`ml-auto pt-20 bg-[#f7f9fc] min-h-[100vh] w-[calc(100%-60px)] md:w-[calc(100%-280px)]`}
+          className={`ml-auto pt-20 bg-[#0f0f0f] min-h-[100vh] w-[calc(100%-60px)] md:w-[calc(100%-280px)]`}
           onClick={handleCloseSideBar}
         >
           <Outlet />
