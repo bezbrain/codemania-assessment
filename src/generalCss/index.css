@@ -12,8 +12,8 @@
 }
 
 body {
-  /* font-family: "Poppins-Regular", Arial, sans-serif; */
-  font-family: "Swiss-Regular";
+  font-family: "Regular-Swiss", Arial, sans-serif;
+  /* font-family: "Regular-Swiss"; */
   color: #55565e;
   /* overflow-x: hidden; */
 }
