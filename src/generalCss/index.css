@@ -1,0 +1,19 @@
+@import url("./font.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* font-family: "Poppins-Regular", Arial, sans-serif; */
+  font-family: "Swiss-Regular";
+  color: #55565e;
+  /* overflow-x: hidden; */
+}
