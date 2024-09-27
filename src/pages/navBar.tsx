@@ -10,10 +10,13 @@ import { useNavigate } from "react-router-dom";
 import { RootState } from "../store";
 
 const NavBar = () => {
-  const { isOpenAside } = useSelector((store: RootState) => store.asideStore);
+  const { isOpenAside, asideWidth, tournamentWidth } = useSelector(
+    (store: RootState) => store.asideStore
+  );
 
-  const [isWidth, setIsWidth] = useState();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isLogout, setIsLogout] = useState(false);
+  const [isRemaining, setIsRemaining] = useState(0);
   const navWidthRef = useRef(null);
 
   const dispatch = useDispatch();
@@ -30,6 +33,31 @@ const NavBar = () => {
   const handleLogout = () => {
     // navigate("/admin");
   };
+
+  const onResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    const occupiedWidth = asideWidth + tournamentWidth;
+    console.log("Occupied " + occupiedWidth);
+    const remainingWidth = window.innerWidth - occupiedWidth;
+
+    console.log("Total " + window.innerWidth);
+    console.log("Remaining " + remainingWidth);
+
+    setIsRemaining(remainingWidth);
+  }, [asideWidth, tournamentWidth, windowWidth]);
+
+  useEffect(() => {
+    console.log("Checking window");
+
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, [windowWidth]);
 
   // SET WIDTH OF NAV WHEN THE SCREEN LOADS, OR CHANGES BASED ON THE DEPENDENCY ARRAY
   //   useEffect(() => {
@@ -55,7 +83,11 @@ const NavBar = () => {
 
   return (
     <NavBarWrapper
-      className={`absolute right-0 ml-auto p-4 border-b-[1px] border-slate-700 w-[calc(100%-50px)] bg-[#121212] md:w-[calc(100%-280px)]`}
+      className={`fixed p-4 border-b-[1px] border-slate-700 bg-[#121212]`}
+      style={{
+        right: isRemaining / 2,
+        width: tournamentWidth,
+      }}
       ref={navWidthRef}
     >
       <ul className={`flex justify-between items-center`}>

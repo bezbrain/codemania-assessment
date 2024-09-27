@@ -53,7 +53,13 @@ const TournamentComp = () => {
       <div className="">
         <TornamentHeader />
 
-        <WarZoneCard />
+        <div className="grid grid-cols-3 gap-12">
+          {Array(6)
+            .fill(0)
+            .map((_, index) => {
+              return <WarZoneCard key={index} />;
+            })}
+        </div>
       </div>
     </div>
   );

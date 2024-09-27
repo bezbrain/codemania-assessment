@@ -8,13 +8,22 @@ import { sidebarItems } from "../data/sidebarItems";
 import { AsideItems, ToggleAside, TopLogo } from "../components/general";
 import { AppDispatch, RootState } from "../store";
 import { logo, smallLogo } from "../assets";
+import { getAsideWidth } from "../management/asideSlice";
 // import { TopLogo, ToggleAside, AsideDropdowns, AsideItems } from "./";
 
 const SharedAside = () => {
-  const { isOpenAside } = useSelector((store: RootState) => store.asideStore);
+  const { isOpenAside, asideWidth } = useSelector(
+    (store: RootState) => store.asideStore
+  );
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const asideRef = useRef<HTMLDivElement | null>(null);
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+
+  const onResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
 
   // FUNCTION TO TOGGLE THE SIDE BAR
   const handleToggleAside = () => {
@@ -27,12 +36,29 @@ const SharedAside = () => {
   };
 
   useEffect(() => {
-    //
-  }, []);
+    console.log("Checking aside");
+
+    if (asideRef.current) {
+      const asideWidth = asideRef.current.getBoundingClientRect().width;
+      console.log(asideWidth);
+      dispatch(getAsideWidth(asideWidth));
+    }
+  }, [asideWidth, windowWidth]);
+
+  useEffect(() => {
+    console.log("Checking window");
+
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, [windowWidth]);
 
   return (
     <SharedAsideWrapper
       className={`bg-[#121212] h-screen fixed overflow-y-auto text-white p-4 transition-all z-10 md:w-[280px]`}
+      ref={asideRef}
     >
       {/* Top Logo */}
       <TopLogo
