@@ -1,20 +1,27 @@
-import { gameImage } from "../../../../assets/images";
-import styled from "styled-components";
 import { ReactNode } from "react";
+import styled from "styled-components";
+
+import { gameImage } from "../../../../assets/images";
 
 interface GameSetupCardProps {
   title: string;
   about: string;
+  aboutStyle?: string;
   button: ReactNode;
 }
 
-const GameSetupCard = ({ title, about, button }: GameSetupCardProps) => {
+const GameSetupCard = ({
+  title,
+  about,
+  button,
+  aboutStyle,
+}: GameSetupCardProps) => {
   return (
     <GameSetupCardWrapper>
       <div className="flex items-end justify-between">
         <div>
           <h2>{title}</h2>
-          <p>{about}</p>
+          <p className={aboutStyle}>{about}</p>
           {button}
         </div>
 
@@ -31,8 +38,10 @@ export default GameSetupCard;
 const GameSetupCardWrapper = styled.div`
   background-color: #1c1c1c;
   padding: 1rem;
-  margin-block: 1rem;
+  margin-top: 1rem;
   color: #fff;
+  width: 100%;
+  border-radius: 4px;
 
   h2 {
     /* border: 2px solid red; */

@@ -14,5 +14,5 @@
 body {
   font-family: "Regular-Swiss", Arial, sans-serif;
   color: #55565e;
-  /* overflow-x: hidden; */
+  overscroll-behavior: none; /* Prevent bounce effect */
 }

@@ -1,7 +1,7 @@
 import { FaUser, FaPlay } from "react-icons/fa6";
 
 import { Button } from "../../general";
-import { GameSetupCard } from "./";
+import { GameSetupCard, TornamentHeader, WarZoneCard } from "./";
 
 const TournamentComp = () => {
   return (
@@ -24,6 +24,7 @@ const TournamentComp = () => {
         <GameSetupCard
           title="Continue playing"
           about="Start or esume tournaments you have registered for"
+          aboutStyle="max-w-[250px]"
           button={
             <Button
               btnContent="Continue playing"
@@ -36,6 +37,7 @@ const TournamentComp = () => {
         <GameSetupCard
           title="Quick match"
           about="Create a tournament and invite friends to play"
+          aboutStyle="max-w-[250px]"
           button={
             <Button
               btnContent="Let's go"
@@ -45,6 +47,13 @@ const TournamentComp = () => {
             />
           }
         />
+      </div>
+
+      {/* Tornaments */}
+      <div className="">
+        <TornamentHeader />
+
+        <WarZoneCard />
       </div>
     </div>
   );
