@@ -20,13 +20,13 @@ const TournamentInfo = () => {
       <header className="flex items-center gap-4 mb-6">
         <Button
           btnContent="Leaderboard"
-          btnStyle={`bg-[inherit] px-3 ${isLeaderboard ? "bg-[#3b3b3b]" : ""}`}
+          btnStyle={`px-3 ${isLeaderboard ? "bg-[#3b3b3b]" : "bg-[inherit]"}`}
           btnContainerStyle="w-fit"
           handleClick={() => dispatch(showLeaderboard())}
         />
         <Button
           btnContent="Fixtures"
-          btnStyle={`bg-[inherit] px-3 ${!isLeaderboard ? "bg-[#3b3b3b]" : ""}`}
+          btnStyle={`px-3 ${!isLeaderboard ? "bg-[#3b3b3b]" : "bg-[inherit]"}`}
           btnContainerStyle="w-fit"
           handleClick={() => dispatch(showFixtures())}
         />
