@@ -128,7 +128,7 @@ const GamePreviewComp = () => {
       />
 
       {/* Tournament Information Table */}
-      <h2 className="text-2xl text-white font-[Title-Swiss] font-semibold my-5">
+      <h2 className="text-xl text-white font-[Title-Swiss] font-semibold my-5 surfaceDuo:text-2xl">
         Tournament information
       </h2>
 
