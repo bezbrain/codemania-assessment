@@ -12,7 +12,7 @@ const TopLogo = ({
   smallLogoStyle,
 }: TopLogoProps) => {
   return (
-    <a href="/" className="flex gap-4 items-center">
+    <a href="/" className="flex gap-4 items-center w-fit">
       <img
         src={logo}
         alt="logo"
