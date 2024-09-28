@@ -20,7 +20,7 @@ const TournamentComp = () => {
           <Button
             btnContent="Complete profile"
             icon={<FaUser />}
-            btnStyle="text-black items-center gap-2 font-semibold px-4"
+            btnStyle="text-black items-center gap-2 font-semibold px-2 text-[12px] surfaceDuo:px-3 surfaceDuo:text-[14px]"
             btnContainerStyle="w-fit mt-3"
           />
         }
@@ -35,7 +35,7 @@ const TournamentComp = () => {
             <Button
               btnContent="Continue playing"
               icon={<FaPlay />}
-              btnStyle="items-center gap-2 font-semibold px-4 bg-inherit text-white"
+              btnStyle="items-center gap-2 font-semibold bg-inherit text-white px-0 text-[12px] surfaceDuo:text-[14px]"
               btnContainerStyle="w-fit mt-3"
             />
           }
@@ -48,7 +48,7 @@ const TournamentComp = () => {
             <Button
               btnContent="Let's go"
               icon={<FaPlay />}
-              btnStyle="items-center gap-2 font-semibold px-4 bg-inherit text-white"
+              btnStyle="items-center gap-2 font-semibold bg-inherit text-white px-0 text-[12px] surfaceDuo:text-[14px]"
               btnContainerStyle="w-fit mt-3"
             />
           }

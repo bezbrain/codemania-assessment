@@ -58,4 +58,9 @@ const GameSetupCardWrapper = styled.div`
       font-size: 20px;
     }
   }
+  @media screen and (max-width: 420px) {
+    h2 {
+      font-size: 18px;
+    }
+  }
 `;
