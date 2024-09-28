@@ -13,26 +13,46 @@ const WarZoneCard = ({ handlePreviewClick }: WarZoneCardProps) => {
   return (
     <div className="w-full">
       <div>
-        <img src={warZoneImg} alt="Warzone" className="w-full" />
+        <img src={warZoneImg} alt="Warzone" loading="lazy" className="w-full" />
       </div>
 
       <h3 className="text-white text-xl my-2 px-2">Call of duty</h3>
 
       <div className="grid grid-cols-2 text-[13px] px-2">
         <div className="flex items-center gap-1">
-          <img src={calendarIcon} alt="Calendar" className="w-[25px]" />
+          <img
+            src={calendarIcon}
+            alt="Calendar"
+            loading="lazy"
+            className="w-[25px]"
+          />
           <p>10 Feb 2023</p>
         </div>
         <div className="flex items-center gap-1">
-          <img src={calendarIcon} alt="Calendar" className="w-[25px]" />
+          <img
+            src={calendarIcon}
+            alt="Calendar"
+            loading="lazy"
+            className="w-[25px]"
+          />
           <p>Free-to-play</p>
         </div>
         <div className="flex items-center gap-1">
-          <img src={calendarIcon} alt="Calendar" className="w-[25px]" />
+          <img
+            src={calendarIcon}
+            alt="Calendar"
+            loading="lazy"
+            className="w-[25px]"
+          />
           <p>4v4</p>
         </div>
         <div className="flex items-center gap-1">
-          <img src={calendarIcon} alt="Calendar" className="w-[25px]" />
+          <img
+            src={calendarIcon}
+            alt="Calendar"
+            loading="lazy"
+            className="w-[25px]"
+          />
           <p>10/48</p>
         </div>
       </div>

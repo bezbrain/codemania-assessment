@@ -26,7 +26,7 @@ const GameSetupCard = ({
         </div>
 
         <div className="">
-          <img src={gameImage} alt="Game" className="h-full" />
+          <img src={gameImage} alt="Game" loading="lazy" className="h-full" />
         </div>
       </div>
     </GameSetupCardWrapper>
