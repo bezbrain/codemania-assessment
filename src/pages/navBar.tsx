@@ -88,12 +88,12 @@ const NavBar = () => {
           />
         </div>
 
-        <div className="flex gap-3 surfaceDuo:gap-8 items-center">
+        <div className="flex gap-6 surfaceDuo:gap-8 items-center">
           <RiNotification2Fill className="text-[#E5E4E4] rotate-45 cursor-pointer text-sm surfaceDuo:text-xl" />
 
           <div className="surfaceDuo:flex items-center gap-[6px] text-sm surfaceDuo:text-[16px]">
             <FaCoins className="text-[#FFB800]" />
-            <p className="text-[#E5E4E4]">20,0000</p>
+            <p className="text-[#E5E4E4] hidden surfaceDuo:block">20,0000</p>
           </div>
 
           <FaUser className="text-[#E5E4E4] cursor-pointer" />
