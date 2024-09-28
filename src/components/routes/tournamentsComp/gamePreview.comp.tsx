@@ -80,7 +80,7 @@ const GamePreviewComp = () => {
         mollit anim id est laborum
       </p>
 
-      <div className="grid grid-cols-2 gap-4 sm:flex items-center sm:gap-12 my-3">
+      <div className="grid grid-cols-2 gap-4 text-sm items-center my-3 iPadAir:flex iPadAir:gap-12">
         <div className="flex items-center gap-1">
           <img
             src={calendarIcon}
