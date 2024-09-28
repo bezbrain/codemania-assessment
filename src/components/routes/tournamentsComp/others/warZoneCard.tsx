@@ -59,7 +59,7 @@ const WarZoneCard = ({ handlePreviewClick }: WarZoneCardProps) => {
 
       <div className="flex gap-2 m-3">
         <GiTrophyCup className="text-2xl text-white" />
-        <p>N10,000</p>
+        <p>₦10,000</p>
       </div>
 
       <Button
