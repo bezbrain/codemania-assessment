@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { IoChevronBack } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { IoLogoGameControllerB } from "react-icons/io";
 
 import { Button } from "../../general";
-import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../store";
 import { hideTournamentPreview } from "../../../management/tournamentSlice";
 import { previewImg } from "../../../assets/images";
 import { calendarIcon, goldCupIcon } from "../../../assets/icons";
-import { IoLogoGameControllerB } from "react-icons/io";
 import { getTournamentWidth } from "../../../management/asideSlice";
 import { TournamentInfo } from "./";
 

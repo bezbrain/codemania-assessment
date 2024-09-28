@@ -4,16 +4,14 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import { sidebarItems } from "../data/sidebarItems";
-import { AsideItems, ToggleAside, TopLogo } from "../components/general";
+import { AsideItems, TopLogo } from "../components/general";
 import { AppDispatch, RootState } from "../store";
 import { logo, smallLogo } from "../assets";
 import { getAsideWidth } from "../management/asideSlice";
 import { hideTournamentPreview } from "../management/tournamentSlice";
 
 const SharedAside = () => {
-  const { isOpenAside, asideWidth } = useSelector(
-    (store: RootState) => store.asideStore
-  );
+  const { asideWidth } = useSelector((store: RootState) => store.asideStore);
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const asideRef = useRef<HTMLDivElement | null>(null);
@@ -22,11 +20,6 @@ const SharedAside = () => {
 
   const onResize = () => {
     setWindowWidth(window.innerWidth);
-  };
-
-  // FUNCTION TO TOGGLE THE SIDE BAR
-  const handleToggleAside = () => {
-    // dispatch(toggleSideBar());
   };
 
   const handleAsideClick = (path: string) => {
@@ -67,13 +60,7 @@ const SharedAside = () => {
         smallLogoStyle="block md:hidden"
       />
 
-      {/* Toggle Increase and decrease side bar */}
-      <ToggleAside
-        handleToggleAside={handleToggleAside}
-        isOpenAside={isOpenAside}
-      />
-
-      <ul className="mt-6 space-y-4 md:space-y-0 md:mt-10 min-h-[80%] relative">
+      <ul className="mt-10 space-y-4 md:space-y-0 min-h-[80%] relative">
         {sidebarItems.map((each) => {
           const { id, name, path, icon } = each;
           return (
