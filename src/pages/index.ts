@@ -4,3 +4,8 @@ export { default as SharedAside } from "./aside";
 export { default as NotFound } from "./notFound";
 export { default as NavBar } from "./navBar";
 export { default as WarZoneOverviewPage } from "./warZoneOverview.Page";
+export { default as LeaderboardPage } from "./leaderboard.page";
+export { default as TokenShopPage } from "./tokenShop.page";
+export { default as LiveBettigPage } from "./liveBettig.page";
+export { default as ContentLockerPage } from "./contentLocker.page";
+export { default as CommunityPage } from "./community.page";
