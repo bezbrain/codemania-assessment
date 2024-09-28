@@ -1,3 +1,5 @@
+import { finalCupImg } from "../../../../assets/images";
+
 const TournamentFixtures = () => {
   return (
     <section className="overflow-x-auto">
@@ -62,6 +64,17 @@ const TournamentFixtures = () => {
           <div className="bg-[#3b3b3b] w-[100px] text-center text-white py-1 absolute top-[32%] -translate-y-1/2 left-60">
             <span>TBD</span>
           </div>
+        </div>
+
+        <div className="absolute top-1/2 translate-x-1/2 -translate-y-1/2 right-1/2">
+          <p className="text-center font-[Title-Swiss] text-xl text-white largeTab:text-3xl">
+            Final
+          </p>
+          <img
+            src={finalCupImg}
+            alt="Cup"
+            className="w-[120px] largeTab:w-[150px]"
+          />
         </div>
 
         {/* RHS */}
