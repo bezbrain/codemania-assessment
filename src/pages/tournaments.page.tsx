@@ -42,7 +42,7 @@ const TournamentsPage = () => {
   }, [tournamentWidth, windowWidth]);
 
   return (
-    <div ref={tournamentRef}>
+    <div ref={tournamentRef} className="text-[#959494]">
       <TournamentComp />
     </div>
   );

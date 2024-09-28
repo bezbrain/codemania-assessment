@@ -9,6 +9,7 @@ import { previewImg } from "../../../assets/images";
 import { calendarIcon, goldCupIcon } from "../../../assets/icons";
 import { IoLogoGameControllerB } from "react-icons/io";
 import { getTournamentWidth } from "../../../management/asideSlice";
+import { TournamentInfo } from "./";
 
 const GamePreviewComp = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -43,7 +44,10 @@ const GamePreviewComp = () => {
   }, [windowWidth]);
 
   return (
-    <div className="font-[Regular-Swiss]" ref={tournamentPreviewRef}>
+    <div
+      className="font-[Regular-Swiss] text-[#959494]"
+      ref={tournamentPreviewRef}
+    >
       <Button
         icon={<IoChevronBack />}
         btnContent="Back"
@@ -60,6 +64,7 @@ const GamePreviewComp = () => {
       <h3 className="text-2xl text-white font-[Title-Swiss] font-semibold my-5">
         Call of duty
       </h3>
+
       <div className="flex items-center w-fit rounded-xl px-2 py-1 gap-2 my-3 bg-[#242424] text-[#888888]">
         <img src={goldCupIcon} alt="Gold" loading="lazy" className="w-7" />
         <p>₦10,000</p>
@@ -75,7 +80,7 @@ const GamePreviewComp = () => {
         mollit anim id est laborum
       </p>
 
-      <div className="grid grid-cols-2 text-[13px] px-2">
+      <div className="flex items-center gap-12 my-3">
         <div className="flex items-center gap-1">
           <img
             src={calendarIcon}
@@ -118,9 +123,16 @@ const GamePreviewComp = () => {
         btnContent="Join tournament"
         icon={<IoLogoGameControllerB />}
         btnStyle="items-center gap-2 text-black font-semibold"
-        btnContainerStyle="my-2"
+        btnContainerStyle="my-2 w-fit"
         // handleClick={handlePreviewClick}
       />
+
+      {/* Tournament Information Table */}
+      <h2 className="text-2xl text-white font-[Title-Swiss] font-semibold my-5">
+        Tournament information
+      </h2>
+
+      <TournamentInfo />
     </div>
   );
 };

@@ -15,7 +15,7 @@ const TournamentComp = () => {
         title="Setup your profile"
         about="Complete your information to get access to tournaments and other
             premium features"
-        aboutStyle="text-[12px] surfaceDuo:text-[16px]"
+        aboutStyle="text-[12px] text-[#959494] surfaceDuo:text-[16px]"
         button={
           <Button
             btnContent="Complete profile"
@@ -30,7 +30,7 @@ const TournamentComp = () => {
         <GameSetupCard
           title="Continue playing"
           about="Start or esume tournaments you have registered for"
-          aboutStyle="text-[12px] surfaceDuo:text-[16px] largeTab:max-w-[250px]"
+          aboutStyle="text-[12px] text-[#959494] surfaceDuo:text-[16px] largeTab:max-w-[250px]"
           button={
             <Button
               btnContent="Continue playing"
@@ -43,7 +43,7 @@ const TournamentComp = () => {
         <GameSetupCard
           title="Quick match"
           about="Create a tournament and invite friends to play"
-          aboutStyle="text-[12px] surfaceDuo:text-[16px] largeTab:max-w-[250px]"
+          aboutStyle="text-[12px] text-[#959494] surfaceDuo:text-[16px] largeTab:max-w-[250px]"
           button={
             <Button
               btnContent="Let's go"
@@ -59,7 +59,7 @@ const TournamentComp = () => {
       <div className="">
         <TornamentHeader />
 
-        <div className="grid surfaceDuo:grid-cols-2 md:grid-cols-1 iPadAir:grid-cols-2 lgScreen:grid-cols-3 gap-4 largeTab:gap-12">
+        <div className="grid surfaceDuo:grid-cols-2 md:grid-cols-1 iPadAir:grid-cols-2 lgScreen:grid-cols-3 gap-2 largeTab:gap-12">
           {Array(6)
             .fill(0)
             .map((_, index) => {

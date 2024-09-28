@@ -11,15 +11,18 @@ interface WarZoneCardProps {
 
 const WarZoneCard = ({ handlePreviewClick }: WarZoneCardProps) => {
   return (
-    <div className="w-full">
+    <div
+      className="w-full cursor-pointer p-2 hover:border-2 hover:border-[#959494] transition-all"
+      onClick={handlePreviewClick}
+    >
       <div>
         <img src={warZoneImg} alt="Warzone" loading="lazy" className="w-full" />
       </div>
 
       <h3 className="text-white text-xl my-2 px-2">Call of duty</h3>
 
-      <div className="grid grid-cols-2 text-[13px] px-2">
-        <div className="flex items-center gap-1">
+      <div className="grid grid-cols-2 text-[13px] px-1">
+        <div className="flex items-center gap-[1px]">
           <img
             src={calendarIcon}
             alt="Calendar"
