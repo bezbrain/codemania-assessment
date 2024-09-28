@@ -38,7 +38,7 @@ const NavBar = () => {
   }, [asideWidth, tournamentWidth, windowWidth]);
 
   useEffect(() => {
-    console.log("Checking window");
+    // console.log("Checking window");
 
     window.addEventListener("resize", onResize);
 

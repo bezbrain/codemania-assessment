@@ -20,7 +20,7 @@ const TournamentsPage = () => {
   };
 
   useEffect(() => {
-    console.log("Checking window");
+    // console.log("Checking window");
 
     window.addEventListener("resize", onResize);
 
@@ -30,13 +30,13 @@ const TournamentsPage = () => {
   }, [windowWidth]);
 
   useEffect(() => {
-    console.log("Checking tournament");
+    // console.log("Checking tournament");
 
     if (tournamentRef.current) {
       const componentLayoutSizes =
         tournamentRef?.current?.getBoundingClientRect().width;
 
-      console.log(componentLayoutSizes);
+      // console.log(componentLayoutSizes);
       dispatch(getTournamentWidth(componentLayoutSizes));
     }
   }, [tournamentWidth, windowWidth]);

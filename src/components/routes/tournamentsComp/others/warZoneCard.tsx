@@ -5,7 +5,11 @@ import { calendarIcon } from "../../../../assets/icons";
 import { warZoneImg } from "../../../../assets/images";
 import { Button } from "../../../general";
 
-const WarZoneCard = () => {
+interface WarZoneCardProps {
+  handlePreviewClick: () => void;
+}
+
+const WarZoneCard = ({ handlePreviewClick }: WarZoneCardProps) => {
   return (
     <div className="w-full">
       <div>
@@ -43,12 +47,14 @@ const WarZoneCard = () => {
         icon={<IoLogoGameControllerB />}
         btnStyle="items-center gap-2 text-black font-semibold"
         btnContainerStyle="my-2"
+        handleClick={handlePreviewClick}
       />
       <Button
         btnContent="View details"
         icon={<IoLogoGameControllerB />}
         btnStyle="bg-inherit items-center"
         btnContainerStyle="border-[1px] border-slate-700"
+        handleClick={handlePreviewClick}
       />
     </div>
   );

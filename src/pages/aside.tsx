@@ -8,6 +8,7 @@ import { AsideItems, ToggleAside, TopLogo } from "../components/general";
 import { AppDispatch, RootState } from "../store";
 import { logo, smallLogo } from "../assets";
 import { getAsideWidth } from "../management/asideSlice";
+import { hideTournamentPreview } from "../management/tournamentSlice";
 
 const SharedAside = () => {
   const { isOpenAside, asideWidth } = useSelector(
@@ -29,22 +30,22 @@ const SharedAside = () => {
   };
 
   const handleAsideClick = (path: string) => {
-    // console.log(id);
+    dispatch(hideTournamentPreview()); // Go back to the original tournament page
     navigate(path);
   };
 
   useEffect(() => {
-    console.log("Checking aside");
+    // console.log("Checking aside");
 
     if (asideRef.current) {
       const asideWidth = asideRef.current.getBoundingClientRect().width;
-      console.log(asideWidth);
+      // console.log(asideWidth);
       dispatch(getAsideWidth(asideWidth));
     }
   }, [asideWidth, windowWidth]);
 
   useEffect(() => {
-    console.log("Checking window");
+    // console.log("Checking window");
 
     window.addEventListener("resize", onResize);
 

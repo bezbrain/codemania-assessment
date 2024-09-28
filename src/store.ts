@@ -1,9 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 import asideReducer from "./management/asideSlice";
+import tournamnentReducer from "./management/tournamentSlice";
 
 export const store = configureStore({
   reducer: {
     asideStore: asideReducer,
+    tournamentStore: tournamnentReducer,
   },
 
   middleware: (getDefaultMiddleware) =>

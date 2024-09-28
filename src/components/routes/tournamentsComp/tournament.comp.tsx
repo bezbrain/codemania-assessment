@@ -1,9 +1,14 @@
 import { FaUser, FaPlay } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
 
+import { AppDispatch } from "../../../store";
 import { Button } from "../../general";
 import { GameSetupCard, TornamentHeader, WarZoneCard } from "./";
+import { showTournamentPreview } from "../../../management/tournamentSlice";
 
 const TournamentComp = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
   return (
     <div>
       <GameSetupCard
@@ -58,7 +63,12 @@ const TournamentComp = () => {
           {Array(6)
             .fill(0)
             .map((_, index) => {
-              return <WarZoneCard key={index} />;
+              return (
+                <WarZoneCard
+                  key={index}
+                  handlePreviewClick={() => dispatch(showTournamentPreview())}
+                />
+              );
             })}
         </div>
       </div>
