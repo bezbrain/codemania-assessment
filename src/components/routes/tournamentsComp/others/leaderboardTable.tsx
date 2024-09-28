@@ -2,8 +2,8 @@ import { FaAngleDown, FaAngleUp, FaMinus } from "react-icons/fa";
 
 const LeaderboardTable = () => {
   return (
-    <div>
-      <table className="bg-[#1c1c1c] w-full text-white text-[14px]">
+    <div className="overflow-x-auto">
+      <table className="bg-[#1c1c1c] text-white text-[14px] w-[800px] overflow-x-auto lg:w-full">
         <thead>
           <tr className="bg-[#242424] text-[#7E7F7F]">
             <td className="pl-4 py-3">Placement</td>
