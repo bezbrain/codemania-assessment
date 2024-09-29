@@ -1,5 +1,7 @@
 # Codemania Frontend Assessment
 
+#### [Visit app](https://codemania-frontend-assessment.netlify.app)
+
 This project was embarked upon to showcase my frontend skill and in the project, the follwoing skills were displayed:
 
 1. Vast understand of React components.
