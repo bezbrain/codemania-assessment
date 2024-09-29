@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Codemania Frontend Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was embarked upon to showcase my frontend skill and in the project, the follwoing skills were displayed:
 
-Currently, two official plugins are available:
+1. Vast understand of React components.
+2. Maintained good folder structure for easy navigation around files and folders.
+3. Built component for reusability purpose, hence making the app be easily scalable.
+4. Keen eyes for design.
+5. Keeping close attention to design details making sure that the developed app closely look like the exact design.
+6. Clean code
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Major tools used:
 
-## Expanding the ESLint configuration
+1. React
+2. TypeScript
+3. Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Libraries used:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Redux Toolkit: Used @reduxjs/toolkit version 2.2.7 and react-redux version 9.1.2 for state management
+2. React: Used react version 18.3.1 for building the app
+3. React DOM: Used react-dom version 18.3.1 and react-router-dom version 6.26.2 to handle page routing
+4. React icons: Used react-icons version 5.3.0 to have get icons needed in the app
+5. Styled components: Used styled-components version 6.1.13 for styling of components
+6. TailwindCSS: Used tailwindcss version 3.4.13 for styling
